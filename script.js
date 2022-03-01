@@ -1,15 +1,6 @@
 let counter = 0;
 
-function count() {
-
-    counter++;
-    document.querySelector('h2').innerHTML = counter;
-
-    if (counter % 10 === 0)
-    alert(`Count is now ${counter}!`)
-
-};
-
+//hello / goodbye
 function hello () {
 
     if (document.querySelector('h1').innerHTML === 'Hello') {
@@ -20,29 +11,35 @@ function hello () {
         
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+//counter
+function count() {
+    
+    counter++;
+    document.querySelector('.start').innerHTML = counter;
 
+    if (counter % 10 === 0)
+    alert(`Count is now ${counter}!`)
+
+};
+
+//play the script after the DOM's download
+document.addEventListener('DOMContentLoaded', () => {
+
+    //counter
     document.querySelector(".button2").onclick = count;
 
-    document.querySelector('form').onsubmit = function() {
+    //name form
+    document.querySelector('form').onsubmit = () => {
         const name = document.querySelector('#name').value;
         alert(`Hello, ${name}!`);
     };
 
-    //change font color to red
-    document.querySelector("#red").onclick = function() {
-        document.querySelector('#color').style.color = "red"
-    }
+    //color buttons
+    document.querySelectorAll(".colorbutton").forEach(button => {
+        button.onclick = function() {
+            document.querySelector('#color').style.color = button.dataset.color;
+        }
 
-    //change font color to blue
-    document.querySelector("#blue").onclick = function() {
-        document.querySelector('#color').style.color = "blue"
-    }
-
-    //change font color to green
-    document.querySelector("#green").onclick = function() {
-        document.querySelector('#color').style.color = "green"
-    }
+    });
 
 });
-    
