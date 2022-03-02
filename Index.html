@@ -13,27 +13,59 @@
 
 </head>
 <body>
+    <!-- change text (hello/goodbye) -->
     <div class="ex1 ex">
         <h1>hello!</h1>
         <button onclick="hello()">Hello/Goodbye</button>
     </div>
 
+    <!-- counter -->
     <div class="ex2 ex">
         <h2 class="start">0</h2>
         <button class="button2">Count</button>
     </div>
     
+    <!-- change colors -->
     <div class="ex3 ex">
         <h1 id="color">color</h1>
+
+        <!-- dropdown -->
+        <select>
+            <option value="black">black</option>
+            <option value="orange">orange</option>
+            <option value="tomato">tomato</option>
+            <option value="pink">pink</option>
+        </select>
+
+        <!-- buttons -->
         <button class="colorbutton" data-color="red">Red</button>
         <button class="colorbutton" data-color="blue">Blue</button>
         <button class="colorbutton" data-color="green">Green</button>
     </div>
 
-    <form class="ex4 ex">
-        <input autofocus id="name" placeholder="name" type="text"> 
-        <input type="submit">
-    </form>
+    <!-- form with input -->
+    <div class="ex4 ex">
+        <h1>Name form</h1>
+
+        <form class="form4">
+            <input autofocus id="name" placeholder="name" type="text"> 
+            <input id="submit" type="submit">
+        </form>
+    </div>
+
+    <!-- task list -->
+    <div class="ex5 ex">
+
+        <h1>Tasks</h1>
+        
+        <ul id="tasks">
+        </ul>
+
+        <form class="form5">
+            <input id="task">
+            <input id="submit2" type="submit">
+        </form>
+    </div>
 
 </body>
 </html>
