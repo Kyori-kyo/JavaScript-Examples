@@ -10,15 +10,18 @@ function hello () {
 };
 
 //counter
-let counter = 0;
+if (!localStorage.getItem('counter')) {
+    localStorage.setItem('counter', 0);
+}
 
-function count() {
-    
+function count() {    
+    let counter = localStorage.getItem('counter');
     counter++;
     document.querySelector('.start').innerHTML = counter;
+    localStorage.setItem('counter', counter);
 
-    if (counter % 10 === 0)
-    alert(`Count is now ${counter}!`)
+    //if (counter % 10 === 0)
+    //alert(`Count is now ${counter}!`)
 
 };
 
@@ -26,6 +29,7 @@ function count() {
 document.addEventListener('DOMContentLoaded', function() {
 
     //counter
+    document.querySelector(".start").innerHTML = localStorage.getItem('counter');
     document.querySelector(".button2").onclick = count;
 
     //color buttons
@@ -62,7 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#submit2').disabled = true;
 
     document.querySelector('#task').onkeyup = () => { 
-        document.querySelector('#submit2').disabled = false
+        if (document.querySelector('#task').value.length > 0) {
+            document.querySelector('#submit2').disabled = false
+        } else {
+            document.querySelector('#submit2').disabled = true
+        }
+            
     }
 
     document.querySelector('.form5').onsubmit = () => {
@@ -74,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#tasks').append(li);
 
         document.querySelector('#task').value = '';
+        document.querySelector('#submit2').disabled = true;
         
-
         return false
     }
 
