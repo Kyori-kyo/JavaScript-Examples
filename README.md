@@ -11,4 +11,4 @@ Some micro projects builded using almost only javascript (and a bit of json), li
 
 - task form, that adds words to the page when you write on it. Small features like you cant send a empty form
 
-- a currency form that informs you what is the comparison between the currency that you've inserted and a dollar using json api to store the currencys and small features like the above one.
+- currency form that informs you what is the comparison between the currency that you've inserted and a dollar using json api to store the currencys and small features like the above one.
